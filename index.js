@@ -45,13 +45,13 @@ const removeValues = (arr, ...vals) => {
     // Copy arr so indexes stay consistent
     let newArr = [...arr];
     // Loop over vals to remove 
-    for(let i = 0; i < vals.length; i++){
+    for (let i = 0; i < vals.length; i++) {
         // set new array to an array without values you want to remove
         newArr = newArr.filter(el => el !== vals[i]);
     };
 
     return newArr;
-}
+};
 
 console.log(removeValues([1, 2, 3, 2, 6, 5, 9, 2, 1, 4], 1, 2, 9))
-console.log(removeValues([8,3,9,10,28,3,4,12,1,6], 8,1,3,12))
+console.log(removeValues([8, 3, 9, 10, 28, 3, 4, 12, 1, 6], 8, 1, 3, 12))
