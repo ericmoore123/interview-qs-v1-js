@@ -40,7 +40,7 @@ const kthLargestEl = (arr, k) => {
 };
 // console.log(kthLargestEl([1, 2, 3, 4, 3, 4, 3, 9, 21, 14, 3, 8, 1], 4));
 
-//Q4 Given an array, remove values provided and return new array 
+// Q4 Given an array, remove values provided and return new array 
 const removeValues = (arr, ...vals) => {
     // Copy arr so indexes stay consistent
     let newArr = [...arr];
@@ -52,5 +52,18 @@ const removeValues = (arr, ...vals) => {
 
     return newArr;
 };
-console.log(removeValues([1, 2, 3, 2, 6, 5, 9, 2, 1, 4], 1, 2, 9))
-console.log(removeValues([8, 3, 9, 10, 28, 3, 4, 12, 1, 6], 8, 1, 3, 12))
+// console.log(removeValues([1, 2, 3, 2, 6, 5, 9, 2, 1, 4], 1, 2, 9))
+// console.log(removeValues([8, 3, 9, 10, 28, 3, 4, 12, 1, 6], 8, 1, 3, 12))
+
+
+// Q5 Return a duplicate free array
+const duplicateFree = (arr) => {
+    // OTHER SOLUTIONS
+    const unique = (array) => Array.from(new Set(array));
+    return unique;
+
+    // const unique2 = (array) => array.filter((element, id) => array.indexOf(element) === id);
+    // return unique2
+};
+console.log(duplicateFree([1, 2, 23, 5, 4, 3, 23, 1, 4, 3]));
+console.log(duplicateFree([1,4,22,1,6,3,2,7,3,6,43,6,2,12,3]));
