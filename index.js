@@ -52,6 +52,5 @@ const removeValues = (arr, ...vals) => {
 
     return newArr;
 };
-
 console.log(removeValues([1, 2, 3, 2, 6, 5, 9, 2, 1, 4], 1, 2, 9))
 console.log(removeValues([8, 3, 9, 10, 28, 3, 4, 12, 1, 6], 8, 1, 3, 12))
