@@ -67,3 +67,23 @@ const duplicateFree = (arr) => {
 };
 console.log(duplicateFree([1, 2, 23, 5, 4, 3, 23, 1, 4, 3]));
 console.log(duplicateFree([1,4,22,1,6,3,2,7,3,6,43,6,2,12,3]));
+
+// Q6 compare two arrays and return if they are equal
+const isEqual = (arr1, arr2) => {
+    if(arr1.length !== arr2.length) return false;
+
+    // Convert js value to a json string then compare and return boolean value
+    return JSON.stringify(arr1) === JSON.stringify(arr2);
+};
+console.log(isEqual([1,2,3,4,5,6], [1,2,3,4,5,6]));
+console.log(isEqual([3,4,2,6], [1,2,3,4]));
+
+// Q7 Turn a deep array into a plain array
+const plainArray = (arr) => {
+    // Join array items with a comma to remove all inner arrays and create a string with each 
+    // item seperated by a comma. Then, join the strings into an array at each comma.
+    let newArr = arr.join(',').split(',');
+    // Parse the array and convert each element from string to integer and return it (map)
+    return newArr.map(el => parseInt(el));
+};
+console.log(plainArray([1,2,3,[4,55,[6]],7]));
