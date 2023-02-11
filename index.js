@@ -149,14 +149,17 @@ const joinToString = (arr) => {
 const swapCase = (word) => {
     let wordArr = word.split('');
     let swapArr = [];
-    console.log(wordArr)
-    for(let i = 0; i < wordArr.length; i++) {
-        if(wordArr[i] == wordArr[i].toUpperCase()){
-            swapArr.push(wordArr[i].toLowerCase());
-        }else{
-            swapArr.push(wordArr[i].toUpperCase());
-        }
-    };
+    // for(let i = 0; i < wordArr.length; i++) {
+    //     if(wordArr[i] == wordArr[i].toUpperCase()){
+    //         swapArr.push(wordArr[i].toLowerCase());
+    //     }else{
+    //         swapArr.push(wordArr[i].toUpperCase());
+    //     }
+    // };
+
+    for (item in wordArr) {
+        wordArr[item] == wordArr[item].toUpperCase() ? swapArr.push(wordArr[item].toLowerCase()) : swapArr.push(wordArr[item].toUpperCase());
+    }
     return swapArr.join('');
 };
 console.log(swapCase('EricMooreApplesBees'));
