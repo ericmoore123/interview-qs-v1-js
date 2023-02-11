@@ -65,20 +65,23 @@ const duplicateFree = (arr) => {
     // const unique2 = (array) => array.filter((element, id) => array.indexOf(element) === id);
     // return unique2
 };
-console.log(duplicateFree([1, 2, 23, 5, 4, 3, 23, 1, 4, 3]));
-console.log(duplicateFree([1,4,22,1,6,3,2,7,3,6,43,6,2,12,3]));
+// console.log(duplicateFree([1, 2, 23, 5, 4, 3, 23, 1, 4, 3]));
+// console.log(duplicateFree([1,4,22,1,6,3,2,7,3,6,43,6,2,12,3]));
+
 
 // Q6 compare two arrays and return if they are equal
 const isEqual = (arr1, arr2) => {
-    if(arr1.length !== arr2.length) return false;
+    if (arr1.length !== arr2.length) return false;
 
     // Convert js value to a json string then compare and return boolean value
     return JSON.stringify(arr1) === JSON.stringify(arr2);
 };
-console.log(isEqual([1,2,3,4,5,6], [1,2,3,4,5,6]));
-console.log(isEqual([3,4,2,6], [1,2,3,4]));
+// console.log(isEqual([1,2,3,4,5,6], [1,2,3,4,5,6]));
+// console.log(isEqual([3,4,2,6], [1,2,3,4]));
+
 
 // Q7 Turn a deep array into a plain array
+// Array.isArray(valueToTest);
 const plainArray = (arr) => {
     // Join array items with a comma to remove all inner arrays and create a string with each 
     // item seperated by a comma. Then, join the strings into an array at each comma.
@@ -86,4 +89,75 @@ const plainArray = (arr) => {
     // Parse the array and convert each element from string to integer and return it (map)
     return newArr.map(el => parseInt(el));
 };
-console.log(plainArray([1,2,3,[4,55,[6]],7]));
+// console.log(plainArray([1,2,3,[4,55,[6,5, [2,9]],[2]],7]));
+// console.log(plainArray([1,2,3,[4,55,[6,5]]]));
+
+
+// Q8 Write a method that splits an array into parts of determined size
+const chunks = (arr, size) => {
+    let newArr = [];
+    let temp = [];
+    console.log(arr.indexOf(size))
+};
+console.log(chunks([1, 2, 3, 4, 5, 6, 7], 2));
+console.log(chunks([1, 2, 3, 4, 5, 6, 7], 4));
+
+// Q9 Check if input is an array or not
+const isArr = (arr) => {
+    return Array.isArray(arr);
+};
+// console.log(isArr([1,2,3,4]));
+// console.log(isArr('2'));
+// console.log(isArr(1));
+
+
+// Q10 Get the first element of an array OR by Passing a parameter 'n' will return the first 
+// 'n' elements of the array.
+// Slice adds/removes items and generates a new array of those items
+// Splice removes/adds to the original array and returns it
+const firstOrMore = (arr, num) => {
+    if (num === undefined) return arr[0];
+    if (num >= arr.length) return arr;
+    else return arr.slice(0, num);
+};
+// console.log(firstOrMore([1,2,3,4]));
+// console.log(firstOrMore([1,2,3,4], 3));
+// console.log(firstOrMore([1,2,3,4], 13));
+
+
+// Q11 Get the last element of an array OR by Passing a parameter 'n' will return the last
+// 'n' elements of the array.
+const lastOrMore = (arr, num) => {
+    if (num === undefined) return arr[arr.length - 1];
+    if (num >= arr.length) return arr;
+    // Slice will defautl to the rest fo the array if only given a starting point 
+    else return arr.slice(arr.length - num);
+};
+// console.log(lastOrMore([1,2,3,4]));
+// console.log(lastOrMore([1,2,3,4,5,6,7,8], 4));
+// console.log(lastOrMore([1,2,3,4,5,6,7,8,9,10], 8));
+
+
+// Q12 Join all elements of an array together int oa string
+const joinToString = (arr) => {
+    return arr.join(', ');
+};
+// console.log(joinToString(['Eric', 'loves', 'chicken', 'nuggets']));
+
+
+// Q13 A function that swaps the case of each letter of an entered string
+const swapCase = (word) => {
+    let wordArr = word.split('');
+    let swapArr = [];
+    console.log(wordArr)
+    for(let i = 0; i < wordArr.length; i++) {
+        if(wordArr[i] == wordArr[i].toUpperCase()){
+            swapArr.push(wordArr[i].toLowerCase());
+        }else{
+            swapArr.push(wordArr[i].toUpperCase());
+        }
+    };
+    return swapArr.join('');
+};
+console.log(swapCase('EricMooreApplesBees'));
+console.log(swapCase('JjiJJjJSIJodhIDIkBNOIUHob'));
