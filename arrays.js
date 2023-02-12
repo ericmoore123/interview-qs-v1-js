@@ -1,4 +1,7 @@
 // Q1 Valid Anagram, given two strings, check if they're anagrams
+
+const { CleaningServices } = require("@mui/icons-material");
+
 // They are anagrams if they have the same letters with the same frequency.
 const anagrams = (s1, s2) => {
     s1.length !== s2.length ? false : null;
@@ -173,4 +176,16 @@ const unionArrays = (arr1, arr2) => {
     // Convert back to array for final return value
     return Array.from(newArr);
 };
-console.log(unionArrays([1,2,3,1,3,4,4], [5,5,7,4,4,6,1,2]));
+// console.log(unionArrays([1,2,3,1,3,4,4], [5,5,7,4,4,6,1,2]));
+
+// Q15 Merge two arrays and remove all duplicates
+const mergeAndRemove = (arr1, arr2) =>{
+    // Concatinate the two arrays
+    let merged = arr1.concat(arr2);
+    // Create a set out of the arrays to remove duplicates (also sorts elements)
+    merged = new Set(merged);
+    // Transform set into array and return 
+    merged = Array.from(new Set(merged));
+    return merged;
+};
+console.log(mergeAndRemove([1,2,3,4], [1,3,4,5,6,7]));
