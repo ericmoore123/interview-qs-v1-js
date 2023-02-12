@@ -189,3 +189,4 @@ const mergeAndRemove = (arr1, arr2) =>{
     return merged;
 };
 console.log(mergeAndRemove([1,2,3,4], [1,3,4,5,6,7]));
+console.log(mergeAndRemove([1,2,3,4], [1,3,4,5,6,7]));
